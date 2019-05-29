@@ -17,28 +17,28 @@ exchanged between server and client should use HTTP formats and commands.
 The HTTP tags must use, at minimum, Host, User-Agent, Content-Type,
 Content-Length, and Date. If you are polling the server, use GET. If you are sending
 data to the server, use POST.
+  
+  
 The required actions are summarized as follows:
+
 Client
 The client will execute the following sequence of steps:
 1. Connect to the server via a socket.
 2. Provide the server with a unique user name.
 a. May be a string provided by the user; or,
 b. Some value associated with the process.
-
-CSE 5306 Lab # 1 Fall – 2018
-
-Sockets and Thread Management
-
-page 2 of 4
 3. Generate a random integer between 5 and 15.
 4. Upload that integer to the server.
 5. Wait until response received from the server.
 6. Parse the HTTP message and print response from the server in normal text.
 7. Repeat at step 3 until the process is killed by the user.
+
+
 Server
 The server should support three concurrently connected clients and display a list of
 which clients are connected in real-time. The server will execute the following sequence
 of steps:
+
 1. Startup and listen for incoming connections.
 2. Print that a client has connected and fork a thread to handle that client.
 3. Print integer received from client to GUI and announce that it is waiting for that
